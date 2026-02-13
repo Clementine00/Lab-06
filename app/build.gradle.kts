@@ -38,7 +38,14 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    testImplementation(libs.junit)
+    //implementation(files("/Users/adrianibarra/Library/Android/sdk/platforms/android-36/android.jar"))
+    //testImplementation(libs.junit)
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.10.2")
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
+}
+tasks.withType<Test>().configureEach {
+    useJUnitPlatform()
 }
